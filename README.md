@@ -1,12 +1,12 @@
 # go-react-wasm
 
-## ⚠ create react app
+## Build web
 
-There is no easier way to do it.
-
-## go wasm_exec
-
-[wasm](https://github.com/golang/go/tree/master/misc/wasm)
+```shell
+cd html
+yarn install
+yarn build
+```
 
 ## Build server
 
@@ -18,9 +18,14 @@ go build -o runserver server/main.go
 
 ```shell
 cd wasm
-GOARCH=wasm GOOS=js go build -o ../demo/test.wasm main.go
+GOARCH=wasm GOOS=js go build -o ../html/src/test.wasm main.go
 ```
 
 ## Browser to url
 
-localhost:3000/demo
+localhost:3000/
+
+```shell
+cp runserver html/dist
+./runserver
+```
